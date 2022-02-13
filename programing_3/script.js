@@ -137,11 +137,11 @@ function draw() {
 
     }
     for (var i in SunkArr) {
-     SunkArr[i].mul();
-   }
-   for (var i in NapastakArr){
-       NapastakArr[i].mul();
-       NapastakArr[i].eat();
-   }
+        SunkArr[i].mul();
+    }
+    for (var i in NapastakArr) {
+        NapastakArr[i].mul();
+        NapastakArr[i].eat();
+    }
 
 }

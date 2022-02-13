@@ -1,7 +1,6 @@
-class Sunk {
+class Sunk extends LivingCreature {
     constructor(x, y) {
-        this.x = x;
-        this.y = y;
+        super(x, y)
         this.multiply = 0;
         this.directions = [
             [this.x - 1, this.y - 1],
@@ -21,6 +20,7 @@ class Sunk {
         var newCell = random(emptyCells);
 
         console.log(emptyCells);
+
         if (newCell && this.multiply >= 32) {
             var newX = newCell[0];
             var newY = newCell[1];
@@ -28,25 +28,8 @@ class Sunk {
 
             var newsk = new Sunk(newX, newY, 1);
             SunkArr.push(newsk);
-            this.multiply =0;
+            this.multiply = 0;
         }
-    }
-
-
-
-    chooseCell(character) {
-        var found = [];
-        for (var i in this.directions) {
-            var x = this.directions[i][0];
-            var y = this.directions[i][1];
-            if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-
-                if (matrix[y][x] == character) {
-                    found.push(this.directions[i]);
-                }
-            }
-        }
-        return found;
     }
 
 

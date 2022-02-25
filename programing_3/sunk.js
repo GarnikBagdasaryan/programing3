@@ -1,4 +1,7 @@
-class Sunk extends LivingCreature {
+let LivingCreature = require('./LivingCreature')
+
+
+module.exports = class Sunk extends LivingCreature {
     constructor(x, y) {
         super(x, y)
         this.multiply = 0;
@@ -16,8 +19,8 @@ class Sunk extends LivingCreature {
     }
     mul() {
         this.multiply++;
-        var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+        var emptyCells = super.chooseCell(0);
+        var newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
 
         console.log(emptyCells);
 

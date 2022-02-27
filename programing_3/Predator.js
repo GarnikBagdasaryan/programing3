@@ -4,7 +4,7 @@ let LivingCreature = require('./LivingCreature')
 module.exports = class Predator extends LivingCreature {
     constructor(x, y) {
         super(x, y)
-        this.energy = 7;
+        this.energy = 8;
         this.multiply = 0;}
 
 
@@ -18,7 +18,7 @@ module.exports = class Predator extends LivingCreature {
         if (newCell && this.multiply >= 10) {
             var newX = newCell[0];
             var newY = newCell[1];
-            matrix[newY][newX] = 7;
+            matrix[newY][newX] = 6;
 
             var newpr = new Predator(newX, newY);
             PredatorArr.push(newpr);

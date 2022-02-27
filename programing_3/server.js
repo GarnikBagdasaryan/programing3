@@ -60,7 +60,7 @@ function generator(matLen, gr, grEat, pr, sk, np) {
 }
 
 
-matrix = generator(25, 100, 25, 25, 10, 25);
+matrix = generator(25, 100, 25, 5, 15, 35);
 
 io.sockets.emit('send matrix', matrix)
 
@@ -73,7 +73,7 @@ NapastakArr = [];
 Grass = require("./Grass")
 GrassEater = require("./GrassEater")
 Predator = require("./Predator")
-Napastak = require("./Napastak")
+Napastak = require("./napastak")
 Sunk = require("./Sunk")
 
 function createObject(matrix) {

@@ -1,14 +1,13 @@
 var socket = io();
 
-let side = 20;
+let side = 25;
 
 function setup() {
-    createCanvas(13 * side, 13 * side);
+    createCanvas(25 * side, 25 * side);
     background("#acacac");
 }
 
-function Draw() {
-    console.log(matrix);
+function nkarel(matrix) {
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
 
@@ -38,3 +37,5 @@ function Draw() {
     }
 
 }
+
+socket.on('send matrix', nkarel)

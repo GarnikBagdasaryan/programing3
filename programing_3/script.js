@@ -39,3 +39,19 @@ function nkarel(matrix) {
 }
 
 socket.on('send matrix', nkarel)
+
+function spawnGrass(){
+    socket.emit('spawnGrass');
+}
+function spawnGrEater(){
+    socket.emit('spawnGrEater');
+}
+function spawnPredator(){
+    socket.emit('spawnPredator');
+}
+function spawnSunk(){
+    socket.emit('spawnSunk');
+}
+function spawnNapastak(){
+    socket.emit('spawnNapastak');
+}

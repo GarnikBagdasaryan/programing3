@@ -3,6 +3,11 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var fs = require("fs");
+const Grass = require('./Grass');
+const GrassEater = require('./GrassEater');
+const Napastak = require('./napastak');
+const Predator = require('./Predator');
+const Sunk = require('./Sunk');
 
 app.use(express.static("."));
 
@@ -70,11 +75,11 @@ PredatorArr = [];
 SunkArr = [];
 NapastakArr = [];
 
-Grass = require("./Grass")
-GrassEater = require("./GrassEater")
-Predator = require("./Predator")
-Napastak = require("./napastak")
-Sunk = require("./Sunk")
+ Grasss = require("./grass")
+ GrasssEater = require("./grassEater")
+ Predatorr = require("./Predator")
+ Napastakk = require("./napastak")
+ Sunkk = require("./sunk")
 
 function createObject(matrix) {
     for (var y = 0; y < matrix.length; ++y) {
@@ -133,6 +138,73 @@ function game() {
 
 setInterval(game, 400)
 
-io.on('connection', function () {
+
+
+function spawnGrass() {
+    for (var y = 0; y < matrix.length; y++) {
+        for (var x = 0; x < matrix[y].length; x++) {
+            if (matrix[y][x] == 0) {
+                matrix[y][x] = 1
+                grassArr.push(new Grass(x, y))
+            }
+        }
+    }
+    io.sockets.emit("send matrix", matrix);
+}
+
+function spawnGrEater() {
+    for (var i = 0; i < 5; i++) {
+        var x = Math.floor(Math.random() * matrix[0].length)
+        var y = Math.floor(Math.random() * matrix.length)
+        if (matrix[y][x] == 0 || matrix[y][x] == 1) {
+            matrix[y][x] = 20
+            grassEaterArr.push(new GrassEater(x, y));
+        }
+    }
+    io.sockets.emit("send matrix", matrix);
+}
+
+function spawnPredator() {
+    for (var i = 0; i < 10; i++) {
+        var x = Math.floor(Math.random() * matrix[0].length)
+        var y = Math.floor(Math.random() * matrix.length)
+        if (matrix[y][x] == 5 || matrix[y][x] == 0) {
+            matrix[y][x] = 3
+            PredatorArr.push(new Predator(x, y));
+        }
+    }
+    io.sockets.emit("send matrix", matrix);
+}
+
+function spawnSunk() {
+    for (var i = 0; i < 1; i++) {
+        var x = Math.floor(Math.random() * matrix[0].length)
+        var y = Math.floor(Math.random() * matrix.length)
+        if (matrix[y][x] == 5 || matrix[y][x] == 0) {
+            matrix[y][x] = 4
+            SunkArr.push(new Sunk(x, y));
+        }
+    }
+    io.sockets.emit("send matrix", matrix);
+}
+
+function spawnNapastak() {
+    for (var i = 0; i < 20; i++) {
+        var x = Math.floor(Math.random() * matrix[0].length)
+        var y = Math.floor(Math.random() * matrix.length)
+        if (matrix[y][x] == 5 || matrix[y][x] == 0) {
+            matrix[y][x] = 5
+            NapastakArr.push(new Napastak(x, y));
+        }
+    }
+    io.sockets.emit("send matrix", matrix);
+}
+
+io.on('connection', function (socket) {
     createObject(matrix)
+    socket.on('spawnGrass', spawnGrass);
+    socket.on('spawnGrEater', spawnGrEater);
+    socket.on('spawnPredator', spawnPredator);
+    socket.on('spawnSunk', spawnSunk);
+    socket.on('spawnNapastak', spawnNapastak);
 })

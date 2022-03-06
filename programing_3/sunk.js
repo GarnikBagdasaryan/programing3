@@ -4,7 +4,7 @@ let LivingCreature = require('./LivingCreature')
 module.exports = class Sunk extends LivingCreature {
     constructor(x, y) {
         super(x, y)
-        this.multiply = 4;
+        this.multiply = 3;
     }
     mul() {
         this.multiply++;
@@ -13,10 +13,10 @@ module.exports = class Sunk extends LivingCreature {
 
         console.log(emptyCells);
 
-        if (newCell && this.multiply >= 15) {
+        if (newCell && this.multiply >= 8) {
             var newX = newCell[0];
             var newY = newCell[1];
-            matrix[newY][newX] = 2;
+            matrix[newY][newX] = 4;
 
             var newsk = new Sunk(newX, newY, 1);
             SunkArr.push(newsk);

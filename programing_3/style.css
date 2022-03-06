@@ -21,13 +21,52 @@ body{
         background-color: rgba(216, 21, 241, 0.356);
         border: #fd01d34b;
         left: 700px;
-        top: 1px;
+        top: 0px;
         color: rgb(255, 255, 255);
         width: 400px;
         height: auto;
     }
-
+    .btn-0{
+        position: absolute;
+        width: 200px;
+        height: 50px;
+        left: 950px;
+        top: 0px;
+        border: none;
+        color: rgb(247, 4, 255);
+        border-radius: 4px;
+        transition: ease-out 0.3;
+        font-size: 2rem;
+        outline: none;
+        border: 3px solid #700f60;
+        position: relative;
+        z-index: 1;
+        }
         
+        .btn-0:hover {
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        }
+        
+        .btn-0:before {
+        transition: 0.5s all ease;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        opacity:0;
+        content: "";
+        background-color: #e202ffd7;
+        
+        }
+        .btn-0:hover::before {
+        transition: 0.5s all ease;
+        left: 0;
+        right: 0;
+        opacity: 1;
+        z-index: -1;
+        }
     .btn-1{
 width: 200px;
 height: 50px;

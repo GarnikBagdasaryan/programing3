@@ -40,11 +40,14 @@ function nkarel(matrix) {
 
 socket.on('send matrix', nkarel)
 
+function kill() {
+    socket.emit("kill")
+}
 function spawnGrass() {
-    socket.emit('spawnGrass');
+    socket.emit("add grass")
 }
 function spawnGrassEater() {
-    socket.emit('spawnGrassEater');
+    socket.emit("spawngrassEater")
 }
 function spawnPredator() {
     socket.emit('spawnPredator');

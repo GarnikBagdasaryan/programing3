@@ -3,7 +3,7 @@ let LivingCreature = require('./LivingCreature')
 module.exports = class GrassEater extends LivingCreature {
     constructor(x, y) {
         super(x, y)
-        this.energy = 8;
+        this.energy = 5;
         this.multiply = 0}
 
 
@@ -13,7 +13,7 @@ module.exports = class GrassEater extends LivingCreature {
         var newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
 
         console.log(emptyCells);
-        if (newCell && this.multiply >= 15) {
+        if (newCell && this.multiply >= 8) {
             var newX = newCell[0];
             var newY = newCell[1];
             matrix[newY][newX] = 2;

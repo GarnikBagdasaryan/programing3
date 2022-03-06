@@ -15,14 +15,14 @@ module.exports = class Predator extends LivingCreature {
 
 
         //console.log(emptyCells);
-        if (newCell && this.multiply >= 10) {
+        if (newCell && this.multiply >= 15) {
             var newX = newCell[0];
             var newY = newCell[1];
-            matrix[newY][newX] = 6;
+            matrix[newY][newX] = 3;
 
             var newpr = new Predator(newX, newY);
             PredatorArr.push(newpr);
-            this.multiply = 5;
+            this.multiply = 0;
         }
     }
 

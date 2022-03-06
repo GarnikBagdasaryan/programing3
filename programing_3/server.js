@@ -14,7 +14,7 @@ app.use(express.static("."));
 app.get('/', function (req, res) {
     res.redirect('index.html');
 });
-server.listen(3000, () => {
+server.listen(3001, () => {
     console.log('connected');
 });
 
@@ -65,7 +65,7 @@ function generator(matLen, gr, grEat, pr, sk, np) {
 }
 
 
-matrix = generator(25, 100, 25, 5, 15, 35);
+matrix = generator(25, 10, 20, 2, 15, 25);
 
 io.sockets.emit('send matrix', matrix)
 
@@ -75,11 +75,11 @@ PredatorArr = [];
 SunkArr = [];
 NapastakArr = [];
 
- Grasss = require("./grass")
- GrasssEater = require("./grassEater")
- Predatorr = require("./Predator")
- Napastakk = require("./napastak")
- Sunkk = require("./sunk")
+Grasss = require("./grass")
+GrasssEater = require("./grassEater")
+Predatorr = require("./Predator")
+Napastakk = require("./napastak")
+Sunkk = require("./sunk")
 
 function createObject(matrix) {
     for (var y = 0; y < matrix.length; ++y) {
@@ -139,7 +139,6 @@ function game() {
 setInterval(game, 400)
 
 
-
 function spawnGrass() {
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
@@ -152,12 +151,12 @@ function spawnGrass() {
     io.sockets.emit("send matrix", matrix);
 }
 
-function spawnGrEater() {
-    for (var i = 0; i < 5; i++) {
+function spawnGrassEater() {
+    for (var i = 0; i < 7; i++) {
         var x = Math.floor(Math.random() * matrix[0].length)
         var y = Math.floor(Math.random() * matrix.length)
-        if (matrix[y][x] == 0 || matrix[y][x] == 1) {
-            matrix[y][x] = 20
+        if (matrix[y][x] == 0) {
+            matrix[y][x] = 2
             grassEaterArr.push(new GrassEater(x, y));
         }
     }
@@ -165,10 +164,10 @@ function spawnGrEater() {
 }
 
 function spawnPredator() {
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 8; i++) {
         var x = Math.floor(Math.random() * matrix[0].length)
         var y = Math.floor(Math.random() * matrix.length)
-        if (matrix[y][x] == 5 || matrix[y][x] == 0) {
+        if (matrix[y][x] == 0) {
             matrix[y][x] = 3
             PredatorArr.push(new Predator(x, y));
         }
@@ -177,10 +176,10 @@ function spawnPredator() {
 }
 
 function spawnSunk() {
-    for (var i = 0; i < 1; i++) {
+    for (var i = 0; i < 9; i++) {
         var x = Math.floor(Math.random() * matrix[0].length)
         var y = Math.floor(Math.random() * matrix.length)
-        if (matrix[y][x] == 5 || matrix[y][x] == 0) {
+        if (matrix[y][x] == 0) {
             matrix[y][x] = 4
             SunkArr.push(new Sunk(x, y));
         }
@@ -189,10 +188,10 @@ function spawnSunk() {
 }
 
 function spawnNapastak() {
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 10; i++) {
         var x = Math.floor(Math.random() * matrix[0].length)
         var y = Math.floor(Math.random() * matrix.length)
-        if (matrix[y][x] == 5 || matrix[y][x] == 0) {
+        if (matrix[y][x] == 0) {
             matrix[y][x] = 5
             NapastakArr.push(new Napastak(x, y));
         }
@@ -203,7 +202,7 @@ function spawnNapastak() {
 io.on('connection', function (socket) {
     createObject(matrix)
     socket.on('spawnGrass', spawnGrass);
-    socket.on('spawnGrEater', spawnGrEater);
+    socket.on('spawnGrEater', spawnGrassEater);
     socket.on('spawnPredator', spawnPredator);
     socket.on('spawnSunk', spawnSunk);
     socket.on('spawnNapastak', spawnNapastak);

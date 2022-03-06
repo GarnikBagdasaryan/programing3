@@ -3,7 +3,7 @@ let LivingCreature = require('./LivingCreature')
 module.exports = class Napastak extends LivingCreature {
     constructor(x, y) {
         super(x, y)
-        this.energy = 15;
+        this.energy = 10;
         this.multiply = 0;}
 
     mul() {
@@ -12,10 +12,10 @@ module.exports = class Napastak extends LivingCreature {
         var newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
 
        // console.log(emptyCells);
-        if (newCell && this.multiply >= 8) {
+        if (newCell && this.multiply >= 12) {
             var newX = newCell[0];
             var newY = newCell[1];
-            matrix[newY][newX] = 6;
+            matrix[newY][newX] = 4;
 
             var newnp = new Napastak(newX, newY);
             NapastakArr.push(newnp);

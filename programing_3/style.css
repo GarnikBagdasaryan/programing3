@@ -1,5 +1,5 @@
 body{
-    background-image: url(https://kartinkin.net/uploads/posts/2021-07/1625545865_25-kartinkin-com-p-temnii-fon-neon-krasivie-foni-26.jpg);
+    background-image: url(https://krot.info/uploads/posts/2020-01/1579201250_5-23.jpg)
 }
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
 *{
@@ -18,9 +18,9 @@ body{
     }
     h1{
         position: absolute;
-        background-color: rgba(216, 21, 241, 0.356);
-        border: #fd01d34b;
-        left: 700px;
+        background-color: #0087D9;
+        border: #0087D9;
+        left: 900px;
         top: 0px;
         color: rgb(255, 255, 255);
         width: 400px;
@@ -33,12 +33,12 @@ body{
         left: 950px;
         top: 0px;
         border: none;
-        color: rgb(247, 4, 255);
+        color: #0087D9;
         border-radius: 4px;
         transition: ease-out 0.3;
         font-size: 2rem;
         outline: none;
-        border: 3px solid #700f60;
+        border: 3px solid #0087D9;
         position: relative;
         z-index: 1;
         }
@@ -57,7 +57,7 @@ body{
         bottom: 0;
         opacity:0;
         content: "";
-        background-color: #e202ffd7;
+        background-color: #0087D9;
         
         }
         .btn-0:hover::before {
@@ -73,12 +73,12 @@ height: 50px;
 left: 750px;
 bottom: 300px;
 border: none;
-color: rgb(247, 4, 255);
+color: #0087D9;
 border-radius: 4px;
 transition: ease-out 0.3;
 font-size: 2rem;
 outline: none;
-border: 3px solid #700f60;
+border: 3px solid #0087D9;
 position: relative;
 z-index: 1;
 }
@@ -97,7 +97,7 @@ right: 50%;
 bottom: 0;
 opacity:0;
 content: "";
-background-color: #e202ffd7;
+background-color: #0087D9;
 
 }
 .btn-1:hover::before {
@@ -114,12 +114,12 @@ z-index: -1;
     left: 550px;
     bottom: 240px;
     border: none;
-    color: rgb(247, 4, 255);
+    color: #0087D9;
     border-radius: 4px;
     transition: ease-out 0.3;
     font-size: 2rem;
     outline: none;
-    border: 3px solid #700f60;
+    border: 3px solid #0087D9;
     position: relative;
     z-index: 1;
     }
@@ -138,7 +138,7 @@ z-index: -1;
     bottom: 0;
     opacity:0;
     content: "";
-    background-color: #e202ffd7;
+    background-color: #0087D9;
     
     }
     .btn-2:hover::before {
@@ -155,12 +155,12 @@ z-index: -1;
         left: 330px;
         bottom: 180px;
         border: none;
-        color: rgb(247, 4, 255);
+        color: #0087D9;
         border-radius: 4px;
         transition: ease-out 0.3;
         font-size: 2rem;
         outline: none;
-        border: 3px solid #700f60;
+        border: 3px solid #0087D9;
         position: relative;
         z-index: 1;
         }
@@ -179,7 +179,7 @@ z-index: -1;
         bottom: 0;
         opacity:0;
         content: "";
-        background-color: #e202ffd7;
+        background-color: #0087D9;
         
         }
         .btn-3:hover:before {
@@ -196,12 +196,12 @@ z-index: -1;
             left: 110px;
             bottom: 120px;
             border: none;
-            color: rgb(247, 4, 255);
+            color: #0087D9;
             border-radius: 4px;
             transition: ease-out 0.3;
             font-size: 2rem;
             outline: none;
-            border: 3px solid #700f60;
+            border: 3px solid #0087D9;
             position: relative;
             z-index: 1;
             }
@@ -220,7 +220,7 @@ z-index: -1;
             bottom: 0;
             opacity:0;
             content: "";
-            background-color: #e202ffd7;
+            background-color: #0087D9;
             
             }
             .btn-4:hover:before {
@@ -237,12 +237,12 @@ z-index: -1;
                 right: 110px;
                 bottom: 60px;
                 border: none;
-                color: rgb(247, 4, 255);
+                color: #0087D9;
                 border-radius: 4px;
                 transition: ease-out 0.3;
                 font-size: 2rem;
                 outline: none;
-                border: 3px solid #700f60;
+                border: 3px solid #0087D9;
                 position: relative;
                 z-index: 1;
                 }
@@ -261,7 +261,7 @@ z-index: -1;
                 bottom: 0;
                 opacity:0;
                 content: "";
-                background-color: #e202ffd7;
+                background-color: #0087D9;
                 
                 }
                 .btn-5:hover:before {
@@ -273,10 +273,10 @@ z-index: -1;
                 }
 
                 .syunak{
-                    background-color: rgba(255, 0, 234, 0.39);
+                    background-color: #0087D9;
                     position: absolute;
                     bottom: 300px;;
-                    right: 70px;
+                    right: 300px;
                     color: rgb(255, 255, 255);
 
                 }

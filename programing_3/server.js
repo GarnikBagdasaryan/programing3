@@ -222,3 +222,16 @@ io.on('connection', function (socket) {
     socket.on('spawnSunk', spawnSunk);
     socket.on('spawnNapastak', spawnNapastak);
 })
+
+var statistics = {};
+
+setInterval(function() {
+    statistics.grass = grassArr.length;
+    statistics.grassEater = grassEaterArr.length;
+    statistics.Predator = PredatorArr.length;
+    statistics.Sunk = SunkArr.length;
+    statistics.Napastak = NapastakArr.length;
+    fs.writeFile("statistics.json", JSON.stringify(statistics), function(){
+        console.log("send")
+    })
+},1000)
